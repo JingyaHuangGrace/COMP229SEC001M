@@ -36,7 +36,7 @@ db.mongoose
 
 var corsOptions = {
 
-  origin: "http://localhost:8080"
+  origin: "http://localhost:8082"
 
 };
 
@@ -70,7 +70,7 @@ app.get("/", (req, res) => {
 
 // set port, listen for requests
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8082;
 
 app.listen(PORT, () => {
 
