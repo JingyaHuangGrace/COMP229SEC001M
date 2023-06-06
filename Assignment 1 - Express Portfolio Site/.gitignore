@@ -1,0 +1,11 @@
+node_modules/
+*.log
+dist/
+.env
+.vscode/
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+secret.txt
+credentials.json
