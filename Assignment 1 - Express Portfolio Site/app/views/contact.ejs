@@ -4,24 +4,32 @@
 <main class="container">
   <div class="jumbotron">
     <h1>Contact Me</h1>
+    <div class="contact-panel">
+        <div class="contact-info">
+          <h2>Contact Information</h2>
+          <p><strong>Phone:</strong> (416)-524-2039</p>
+          <p><strong>Email:</strong> jhuan180@my.Centennialcollege.ca</p>
+          <p><strong>Address:</strong> 937 Progress Ave, Toronto, ON M1G 3T8</p>
+        </div>
     <form action="/" method="post">
-      <div class="form-group">
+      <div class="contact-form">
+        <h2>Send a message</h2>
         <label for="firstName">First Name</label>
         <input type="text" id="firstName" name="firstName" class="form-control" required>
       </div>
-      <div class="form-group">
+      <div class="contact-form">
         <label for="lastName">Last Name</label>
         <input type="text" id="lastName" name="lastName" class="form-control" required>
       </div>
-      <div class="form-group">
+      <div class="contact-form">
         <label for="contactNumber">Contact Number</label>
         <input type="tel" id="contactNumber" name="contactNumber" class="form-control" required>
       </div>
-      <div class="form-group">
+      <div class="contact-form">
         <label for="email">Email Address</label>
         <input type="email" id="email" name="email" class="form-control" required>
       </div>
-      <div class="form-group">
+      <div class="contact-form">
         <label for="message">Message</label>
         <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
       </div>
@@ -32,3 +40,18 @@
 
 <%- include ('partials/bottom_nav.ejs') %>
 <%- include ('partials/footer.ejs') %>
+<style>
+    .contact-panel {
+  display: flex;
+  flex-direction: row;
+}
+
+.contact-info {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.contact-form {
+  flex: 1;
+}
+</style>
