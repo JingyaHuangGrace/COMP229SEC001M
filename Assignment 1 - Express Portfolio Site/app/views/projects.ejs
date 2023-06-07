@@ -1,15 +1,48 @@
 <%- include ('partials/header.ejs') %>
 <%- include ('partials/main_nav.ejs') %>
 
-    <!--<img src="img/logo.png" alt="logo">-->
-
-<main class="ontainer">
+<main class="container">
 <div class="jumbotron">
+    <h1>Academic Projects</h1>
+    <div class="list">
+        <div>
+            <img src="/img/icon-SQL.png" alt="icon-SQL" style="width:100px; height: auto; float: left;">
+            <div class="project-content">
+            <h2>Smartphone Store System</h2>
+            <p>Used Java and SQL to develop a software that consists of 5 components for managing customers, suppliers, orders, and sales analysis;<br>It enables users to interact with the database through UI; <br>collaborated with 2 group members and finished part of creating database and package including functions and procedures using PL/SQL</p>
+            </div>
+        </div>
+        <div>
+            <img src="/img/icon-cs.png" alt="icon-cs" style="width: 100px; height: auto; float: left;">
+            <div class="project-content">
+            <h2>Banking Application</h2>
+            <p>Implemented a banking system that can record and display customers' login and transaction activities; <br>collaborated with 4 group members using GitHub; finished part of coding and debugging</p>
+            </div>
+        </div>
+        <div>
+            <img src="/img/sd.png" alt="sd" style="width: 100px; height: auto; float: left;">
+            <div class="project-content">
+            <h2>Just Deal System</h2>
+            <p>Designed a system that allows users and retailers to compare price of products; it contains 4 subsystems;<br>collaborated with 9 group members and finished product subsystem and relevant UML diagrams</p>
+            </div>
+        </div>
 
-    <h1>Welcome to <%= title %> Page</h1>
-    <p>This is the Home page</p>
     </div>
+</div>
 </main>
 
       <%- include ('partials/bottom_nav.ejs') %>
       <%- include ('partials/footer.ejs') %>
+
+      <!--display projects horizontally and add padding between images and content-->
+      <style>
+        .list{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+        grid: gap 40px;
+        margin-top: 50px;
+        }
+        .project-content {
+          padding-left: 120px;
+        }
+      </style>
