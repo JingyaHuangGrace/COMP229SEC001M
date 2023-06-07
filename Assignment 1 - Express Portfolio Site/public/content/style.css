@@ -1,4 +1,5 @@
 /*express.js-Jingya Huang 301221651 June 6, 2023 */
+/*display project items inline and add padding */
 .list{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
@@ -8,3 +9,17 @@
 .project-content {
       padding-left: 120px;
     }
+/* modify the layout of contact  */
+    .contact-panel {
+  display: flex;
+  flex-direction: row;
+}
+
+.contact-info {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.contact-form {
+  flex: 1;
+}

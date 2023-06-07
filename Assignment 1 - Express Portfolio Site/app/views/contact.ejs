@@ -11,7 +11,7 @@
           <p><strong>Email:</strong> jhuan180@my.Centennialcollege.ca</p>
           <p><strong>Address:</strong> 937 Progress Ave, Toronto, ON M1G 3T8</p>
         </div>
-    <form action="/" method="post">
+    <form action="/" onsubmit="postMessage()">
       <div class="contact-form">
         <h2>Send a message</h2>
         <label for="firstName">First Name</label>
@@ -35,23 +35,17 @@
       </div>
       <button type="submit" class="btn btn-primary">Send Message</button>
     </form>
+    <script>
+      /*function postMessage()
+      {
+          alert("Message sent!")
+      }*/
+      function postMessage() {
+          alert("Message sent!");
+      }
+  </script>
   </div>
 </main>
 
 <%- include ('partials/bottom_nav.ejs') %>
 <%- include ('partials/footer.ejs') %>
-<style>
-    .contact-panel {
-  display: flex;
-  flex-direction: row;
-}
-
-.contact-info {
-  flex: 1;
-  padding-right: 20px;
-}
-
-.contact-form {
-  flex: 1;
-}
-</style>
