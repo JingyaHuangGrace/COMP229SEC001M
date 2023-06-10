@@ -13,7 +13,7 @@ db.mongoose = mongoose;
 db.url = dbConfig.url;
 
 db.products = require("./product.model.js")(mongoose);
-
+db.categories = require("./category.model.js")(mongoose);
  
 
 module.exports = db;
