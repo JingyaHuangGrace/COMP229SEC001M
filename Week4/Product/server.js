@@ -71,7 +71,7 @@ require("./app/routes/category.routes")(app);
 
 // set port, listen for requests
 
-const PORT = process.env.PORT || 8082;
+const PORT = process.env.PORT || 8081;
 
 app.listen(PORT, () => {
 
