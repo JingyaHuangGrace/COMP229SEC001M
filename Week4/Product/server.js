@@ -1,13 +1,13 @@
 const express = require("express");
 
 const cors = require("cors");
-
+const cookieSession = require("cookie-session");
  
 
 const app = express();
 
 const db = require("./app/models");
-
+const Role = db.role;
 db.mongoose
 
   .connect(db.url, {
@@ -32,12 +32,80 @@ db.mongoose
 
   });
 
- 
+  function initial() {
+
+    Role.estimatedDocumentCount((err, count) => {
+  
+      if (!err && count === 0) {
+  
+        new Role({
+  
+          name: "user"
+  
+        }).save(err => {
+  
+          if (err) {
+  
+            console.log("error", err);
+  
+          }
+  
+   
+  
+          console.log("added 'user' to roles collection");
+  
+        });
+  
+   
+  
+        new Role({
+  
+          name: "moderator"
+  
+        }).save(err => {
+  
+          if (err) {
+  
+            console.log("error", err);
+  
+          }
+  
+   
+  
+          console.log("added 'moderator' to roles collection");
+  
+        });
+  
+   
+  
+        new Role({
+  
+          name: "admin"
+  
+        }).save(err => {
+  
+          if (err) {
+  
+            console.log("error", err);
+  
+          }
+  
+   
+  
+          console.log("added 'admin' to roles collection");
+  
+        });
+  
+      }
+  
+    });
+  
+  }
 
 var corsOptions = {
 
-  origin: "http://localhost:8082"
-
+  origin: ["http://localhost:8082"],
+  credentials: true
 };
 
  
@@ -56,7 +124,12 @@ app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
 
- 
+app.use( 
+  cookieSession({
+     name: "Jingya-session",
+     secret: "COOKIE_SECRET", // should use as secret environment variable 
+     httpOnly: true  
+ })); 
 
 // simple route
 
