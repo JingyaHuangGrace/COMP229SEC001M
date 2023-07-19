@@ -22,6 +22,7 @@ db.url = dbConfig.url;
 
 db.products = require("./product.model.js")(mongoose);
 db.categories = require("./category.model.js")(mongoose);
- 
+
+db.refreshToken = require("./refreshToken.model");
 
 module.exports = db;
